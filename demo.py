@@ -14,8 +14,8 @@ from src.data_loader import load_amazon_reviews
 from src.preprocessor import prepare_review_data
 from src.tfidf_model import TFIDFSentimentAnalyzer
 from src.visualizer import SentimentVisualizer 
-from src.llm_model import run_llm_results_pipeline
-from src.tfidf_model import tf_idf_implementation
+from llm import llm_implementation
+from tf_idf import tf_idf_implementation
         
 
 def print_banner():
@@ -112,7 +112,7 @@ def run_full_pipeline(args):
     if not args.skip_llm:
         print("\nLLM Analysis")
        
-        run_llm_results_pipeline(
+        llm_implementation(
             category=args.category,
             n_samples=min(args.n_samples, 2000),  
             output_dir='results',
