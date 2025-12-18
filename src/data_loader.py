@@ -13,8 +13,7 @@ from tqdm import tqdm
 
 
 class AmazonReviewLoader:
-    BASE_URL = "https://datarepo.eng.ucsd.edu/mcauley_group/data/amazon_2023/raw/review_categories/"
-    
+    BASE_URL = "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/"
     CATEGORIES = [
         'All_Beauty',
         'Amazon_Fashion', 

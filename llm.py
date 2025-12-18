@@ -22,7 +22,7 @@ from src.summarizer import CustomerInsightSummarizer
 from src.visualizer import SentimentVisualizer
 
 
-def run_llm_results_pipeline(
+def llm_implementation(
     category: str = 'Electronics',
     n_samples: int = 2000,  # Smaller sample for LLM due to speed
     output_dir: str = 'results',
@@ -197,7 +197,7 @@ def generate_llm_txt_report(
         f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
         f"Dataset: Amazon Reviews 2023 - {category}",
         f"Sample Size: {n_samples:,} reviews",
-        "1. MODEL PERFORMANCE COMPARISON",
+        "MODEL PERFORMANCE COMPARISON:",
         ""
     ]
     
@@ -230,7 +230,7 @@ def generate_llm_txt_report(
         ])
     
     report_lines.extend([
-        "2. CUSTOMER INSIGHTS SUMMARY",
+        "CUSTOMER INSIGHTS:",
         "",
         f"Total Reviews: {insights.get('total_reviews', 0):,}",
         f"Average Rating: {insights.get('average_rating', 0):.2f}/5.0",
@@ -278,7 +278,7 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-    run_llm_results_pipeline(
+    llm_implementation(
         category=args.category,
         n_samples=args.n_samples,
         output_dir=args.output_dir,
