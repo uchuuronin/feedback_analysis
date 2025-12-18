@@ -55,5 +55,7 @@ python demo.py
 
 ## Context History
 Exploratory project done to understand NLP concepts practically on 2024 
+
 Version: 1.2 (last updated Dec 2025)
+
 Created: 2024
